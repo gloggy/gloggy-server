@@ -1,19 +1,22 @@
-
+// NPM Dependencies
 var include = require('include');
 var restify = require('restify');
 
-var port = 3000;
+// Project modules
+// ...
+var routes = include('./lib/routes');
 
-function respond(req, res, next) {
-  res.send('hello ' + req.params.name);
-};
+// Vars
+var port, server;
 
-var server = restify.createServer();
+// ---
+port = 3000;
+server = restify.createServer();
+routes.init(server);
 
-var foo = require('./lib/routes');
-foo.init(server);
+// var foo = require('./lib/routes');
+// foo.init(server);
 
 server.listen(port, function() {
   console.log('%s listening at %s', server.name, server.url);
 });
-
