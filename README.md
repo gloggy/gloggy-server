@@ -6,7 +6,7 @@ Server code for Gloggy (http://glog.gy)
 ## Routes
 
 * GET /:user
-  * IDK my BFF Jill?
+  * ???
 
 * GET /:user/post
   * List of all posts  
